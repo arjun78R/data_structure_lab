@@ -33,9 +33,24 @@ void sort_array(int arr[],int n)
 
 
 
+
+void merge_array(int arr1[],int arr2[],int arr3[],int n1,int n2)
+{
+       int i;
+       for( i=0;i<n1;i++)
+       {
+           arr3[i]=arr1[i];
+       }
+       for(int j=0; j<n2;j++)
+       {
+           arr3[i]=arr2[j];
+           i++;
+           }
+}
+
 int main()
 {
-	int arr1[10], arr2[10],arr[20];
+	int arr1[10], arr2[10],arr3[20];
        	int n1,n2,n3,i;
 
         printf("Enter The Number of Elements of array 1: ");
@@ -79,6 +94,10 @@ int main()
         print_array(arr2, n2);
         printf("Sorted Array 2:\n ");
 	sort_array(arr2,n2);
+	
+	printf("merged array :\n");
+	merge_array(arr1,arr2,arr3,n1,n2);
+	sort_array(arr3,n1+n2);
 
 
 	return 0;
